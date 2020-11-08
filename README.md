@@ -10,3 +10,11 @@ Công nghệ:
 - Back-end: NodeJS ExpressJS, Sequelize
 - Hệ quản trị cơ sở dữ liệu: PostgreSQL
 
+Mobile Repo:
+https://github.com/nguyendacthienngan/RecruitmentManagementApp
+
+Thành viên nhóm:
+- Nguyễn Đắc Thiên Ngân
+- Nguyễn Lê Bách
+- Chung Thái Dung
+- Thi Thanh Chương
