@@ -24,10 +24,14 @@
     "build": "ng build --prod --aot --buildOptimizer --commonChunk --vendorChunk --optimization --progress",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
+    "typescript": "~3.7.5",
+    "@angular/cli": "^9.1.12",
+    "@angular/compiler-cli": "^9.1.12",
     "@angular/animations": "^9.1.12",
     "@angular/common": "^9.1.12",
     "@angular/compiler": "^9.1.12",
