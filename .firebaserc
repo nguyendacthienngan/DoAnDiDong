@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "weebshr-69cef": {
+      "hosting": {
+        "ng": [
+          "weebshr-69cef"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "weebshr-69cef"
+  }
+}
