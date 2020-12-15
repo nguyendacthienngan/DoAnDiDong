@@ -1,4 +1,5 @@
 // Here you can add other styles
+// LOGIN
 .background-image{
     background: url('../assets/img/background.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -6,6 +7,35 @@
     background-size: cover;
     -o-background-size: cover;
 }
+.gradient-border{
+	border: 20px solid transparent;
+	border-radius: 10px;
+	background-image:
+	linear-gradient(white, white),
+	linear-gradient(270deg, #00D7B9, #B95DD7 50%, #FFB367 100%);
+
+  background-repeat: no-repeat;
+  background-origin: padding-box, border-box;
+  text-align: center;
+}
+.animated {
+	background-image:
+	  linear-gradient(white, white),
+	  linear-gradient(117deg, rgba(1,38,144,1) 0%, rgba(3,63,159,1) 28%, rgba(34,104,174,1) 49%, rgba(43,119,179,1) 68%, rgba(90,186,198,1) 100%);
+
+
+	background-repeat: no-repeat;
+	background-size: 100% 100%, 100% 200%;
+	background-position: 0 0, 0 100%;
+	background-origin: padding-box, border-box;
+	animation: highlight 1s infinite alternate;
+  }
+
+  @keyframes highlight {
+	100% {
+	  background-position: 0 0, 0 0;
+	}
+  }
 .log-in-width{
     max-width: 75%
 }
@@ -15,9 +45,20 @@
 .box {
     padding: 0;
 }
-.border-radius-card{
-    border-radius: 100%;
-}
 .btn-primary {
-    background-color: #3392D7;
+	background: rgb(1,38,144);
+    background: linear-gradient(117deg, rgba(1,38,144,1) 0%, rgba(3,63,159,1) 28%, rgba(34,104,174,1) 49%, rgba(43,119,179,1) 68%, rgba(90,186,198,1) 100%);
+
+}
+@media (max-width: 991.98px)
+{
+	.app-body {
+		margin-top: 0px;
+	}
+}
+
+// HOME
+.navbar {
+    background: rgb(1,38,144);
+    background: linear-gradient(117deg, rgba(1,38,144,1) 0%, rgba(3,63,159,1) 28%, rgba(34,104,174,1) 49%, rgba(43,119,179,1) 68%, rgba(90,186,198,1) 100%);
 }
