@@ -1,1 +1,27 @@
 // Here you can add other styles
+.background-image{
+    background: url('../assets/img/background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.log-in-width{
+    max-width: 75%
+}
+.form-group {
+    align-items: center;
+}
+.img-fluid {
+    //object-fit: fill;
+    
+}
+.box {
+    padding: 0;
+}
+.border-radius-card{
+    border-radius: 100%;
+}
+.btn-primary {
+    background-color: #3392D7;
+}
