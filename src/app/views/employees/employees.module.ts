@@ -4,8 +4,6 @@ import { EmployeesComponent } from './employees.component';
 
 import { EmployeesRoutingModule } from './employees-routing.module';
 
-
-
 @NgModule({
   declarations: [EmployeesComponent],
   imports: [
