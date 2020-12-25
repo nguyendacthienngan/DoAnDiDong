@@ -1,0 +1,26 @@
+th:first-child, td:first-child
+{
+  position:sticky;
+  left:0px;
+}
+
+table {
+  font-size: large;
+} 
+
+th{
+  border-top: 0px !important;
+}
+.btn-primary {
+  color: grey;
+  background-color: white;
+  border-color: grey; 
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary, .btn-primary:active:focus {
+  color: grey;
+  background-color: white;
+  border-color: grey; 
+}
+span.caret {
+  color: red
+}

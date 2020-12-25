@@ -1,29 +1,86 @@
 <div class="col-lg-6">
     <div class="card">
-      <div class="card-header  bg-white">
-        <i class="fa fa-align-justify"></i> Simple Table
+      <div class="card-header bg-white parent">
+        <div class="btn-group" dropdown #dropdown="bs-dropdown" [autoClose]="false">
+          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+            Button dropdown 
+            <span class="caret"></span>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" role="menu">
+            <li role="menuitem"><a class="dropdown-item">Action</a></li>
+            <li role="menuitem"><a class="dropdown-item">Another action</a></li>
+            <li role="menuitem"><a class="dropdown-item">Something else here</a></li>
+          </ul>
+        </div>
+        <div class="btn-group" dropdown #dropdown="bs-dropdown" [autoClose]="false">
+          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+            Button dropdown <span class="caret"></span>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" role="menu">
+            <li role="menuitem"><a class="dropdown-item">Action</a></li>
+            <li role="menuitem"><a class="dropdown-item">Another action</a></li>
+            <li role="menuitem"><a class="dropdown-item">Something else here</a></li>
+          </ul>
+        </div>
+        <div class="btn-group" dropdown #dropdown="bs-dropdown" [autoClose]="false">
+          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+            Button dropdown <span class="caret"></span>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" role="menu">
+            <li role="menuitem"><a class="dropdown-item">Action</a></li>
+            <li role="menuitem"><a class="dropdown-item">Another action</a></li>
+            <li role="menuitem"><a class="dropdown-item">Something else here</a></li>
+          </ul>
+        </div>
+        <div class="btn-group" dropdown #dropdown="bs-dropdown" [autoClose]="false">
+          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+            Button dropdown <span class="caret"></span>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" role="menu">
+            <li role="menuitem"><a class="dropdown-item">Action</a></li>
+            <li role="menuitem"><a class="dropdown-item">Another action</a></li>
+            <li role="menuitem"><a class="dropdown-item">Something else here</a></li>
+          </ul>
+        </div>
       </div>
+      
       <div class="card-body">
-        <table class="table">
+        <table mdbTable mdbTableScroll  scrollY="true" scrollX="true"  maxHeight="50" maxWidth="50" class="table">
           <thead>
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Birth Date</th>
-              <th>National ID</th>
+            <tr mdbTableCol >
+              <th  scope="row"class="border-top-0">Username</th>
+              <th  scope="row">Date registered</th>
+              <th  scope="row">Role</th>
+              <th  scope="row">Status</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let data of datas">
-              <td>{{data.first_name}}</td>
-              <td>{{data.last_name}}</td>
-              <td>{{data.birth_date}}</td>
-              <td>{{data.national_id}}</td>
+            <tr>
+              <td>Samppa Nori</td>
+              <td>2012/01/01</td>
+              <td>Member</td>
+              <td>
+                <span class="badge badge-success">Active</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Samppa Nori</td>
+              <td>2012/01/01</td>
+              <td>Member</td>
+              <td>
+                <span class="badge badge-success">Active</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Samppa Nori</td>
+              <td>2012/01/01</td>
+              <td>Member</td>
               <td>
                 <span class="badge badge-success">Active</span>
               </td>
             </tr>
           </tbody>
+
         </table>
         <ul class="pagination">
           <li class="page-item"><a class="page-link" href="#">Prev</a></li>
