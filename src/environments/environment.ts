@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:8000',
+  baseUrl: 'http://localhost:8000/v1',
   // apiHeaderKey: 'x-api-key',
   // apiHeaderValue: '123@lyft-promotion',
   // apiHeaderAuth: 'x-access-token',

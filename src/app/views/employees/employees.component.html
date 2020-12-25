@@ -1,4 +1,19 @@
-<div class="col-lg-6">
+<h1 class="my-8 text-center text-6xl font-bold"><span class="text-teal-500">TailwindCSS</span> and <span class="text-red-600">Angular</span> is awesome!</h1>
+<p class="text-center text-3xl">Thanks for reading!</p>
+<div class="bg-white">
+  <nav class="flex flex-col sm:flex-row">
+      <button class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none text-blue-500 border-b-2 font-medium border-blue-500">
+          Tab 1
+      </button><button class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none">
+          Tab 2
+      </button><button class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none">
+          Tab 3
+      </button><button class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none">
+          Tab 4
+      </button>
+  </nav>
+</div>
+<div class="col-lg-12">
     <div class="card">
       <div class="card-header bg-white parent">
         <div class="btn-group" dropdown #dropdown="bs-dropdown" [autoClose]="false">
@@ -49,38 +64,17 @@
           <thead>
             <tr mdbTableCol >
               <th  scope="row"class="border-top-0">Username</th>
-              <th  scope="row">Date registered</th>
+              <th  scope="row">Name</th>
               <th  scope="row">Role</th>
               <th  scope="row">Status</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Samppa Nori</td>
-              <td>2012/01/01</td>
-              <td>Member</td>
-              <td>
-                <span class="badge badge-success">Active</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Samppa Nori</td>
-              <td>2012/01/01</td>
-              <td>Member</td>
-              <td>
-                <span class="badge badge-success">Active</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Samppa Nori</td>
-              <td>2012/01/01</td>
-              <td>Member</td>
-              <td>
-                <span class="badge badge-success">Active</span>
-              </td>
+            <tr *ngFor="let data of datas; let i = index">
+              <td>{{data.first_name}}</td>
+              <td>{{i}}</td>
             </tr>
           </tbody>
-
         </table>
         <ul class="pagination">
           <li class="page-item"><a class="page-link" href="#">Prev</a></li>
