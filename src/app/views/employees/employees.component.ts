@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { EmployeeService } from '../../shared/services/employee/employee.service'
 import { Employee } from '../../view-model/employee.vm'
-
 @Component({
   selector: 'app-employees',
   templateUrl: './employees.component.html',

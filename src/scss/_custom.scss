@@ -5,5 +5,49 @@
 }
 
 .app-body .main{
-	background-color: #F9FAFB;
+    background-color: #F9FAFB;
 }
+
+.btn-gradient {
+	background: rgb(1,38,144);
+    background: linear-gradient(117deg, rgba(1,38,144,1) 0%, rgba(3,63,159,1) 28%, rgba(34,104,174,1) 49%, rgba(43,119,179,1) 68%, rgba(90,186,198,1) 100%);
+    color: white;
+}
+.btn-dropdown {
+    color: grey;
+    background-color: white;
+    border-color: grey; 
+    margin: 10px;
+  }
+
+.btn-dropdown:hover, .btn-dropdown:focus, .btn-dropdown:active, .btn-dropdown.active, .open>.dropdown-toggle.btn-dropdown, .btn-dropdown:active:focus {
+    color: grey;
+    background-color: white;
+    border-color: grey; 
+}
+
+/* Styles for icon  */
+.icons {
+    margin-right: 10px;
+  }
+
+/* Styles for tab labels */
+.mat-tab-label {
+    color: rgb(1,38,144);
+  }
+  
+  /* Styles for the active tab label */
+  .mat-tab-label.mat-tab-label-active {
+    color: rgb(1,38,144);
+  }
+  
+  /* Styles for the ink bar */
+  .mat-ink-bar {
+    background: rgb(1,38,144);
+    background: linear-gradient(117deg, rgba(1,38,144,1) 0%, rgba(3,63,159,1) 28%, rgba(34,104,174,1) 49%, rgba(43,119,179,1) 68%, rgba(90,186,198,1) 100%);
+     
+  }
+
+  .pull-right {
+      margin-right: 0px;
+  }

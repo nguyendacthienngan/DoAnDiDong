@@ -1,91 +1,45 @@
-<h1 class="my-8 text-center text-6xl font-bold"><span class="text-teal-500">TailwindCSS</span> and <span class="text-red-600">Angular</span> is awesome!</h1>
-<p class="text-center text-3xl">Thanks for reading!</p>
-<div class="bg-white">
-  <nav class="flex flex-col sm:flex-row">
-      <button class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none text-blue-500 border-b-2 font-medium border-blue-500">
-          Tab 1
-      </button><button class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none">
-          Tab 2
-      </button><button class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none">
-          Tab 3
-      </button><button class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none">
-          Tab 4
-      </button>
-  </nav>
-</div>
-<div class="col-lg-12">
-    <div class="card">
-      <div class="card-header bg-white parent">
-        <div class="btn-group" dropdown #dropdown="bs-dropdown" [autoClose]="false">
-          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
-            Button dropdown 
-            <span class="caret"></span>
-          </button>
-          <ul *dropdownMenu class="dropdown-menu" role="menu">
-            <li role="menuitem"><a class="dropdown-item">Action</a></li>
-            <li role="menuitem"><a class="dropdown-item">Another action</a></li>
-            <li role="menuitem"><a class="dropdown-item">Something else here</a></li>
-          </ul>
-        </div>
-        <div class="btn-group" dropdown #dropdown="bs-dropdown" [autoClose]="false">
-          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
-            Button dropdown <span class="caret"></span>
-          </button>
-          <ul *dropdownMenu class="dropdown-menu" role="menu">
-            <li role="menuitem"><a class="dropdown-item">Action</a></li>
-            <li role="menuitem"><a class="dropdown-item">Another action</a></li>
-            <li role="menuitem"><a class="dropdown-item">Something else here</a></li>
-          </ul>
-        </div>
-        <div class="btn-group" dropdown #dropdown="bs-dropdown" [autoClose]="false">
-          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
-            Button dropdown <span class="caret"></span>
-          </button>
-          <ul *dropdownMenu class="dropdown-menu" role="menu">
-            <li role="menuitem"><a class="dropdown-item">Action</a></li>
-            <li role="menuitem"><a class="dropdown-item">Another action</a></li>
-            <li role="menuitem"><a class="dropdown-item">Something else here</a></li>
-          </ul>
-        </div>
-        <div class="btn-group" dropdown #dropdown="bs-dropdown" [autoClose]="false">
-          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
-            Button dropdown <span class="caret"></span>
-          </button>
-          <ul *dropdownMenu class="dropdown-menu" role="menu">
-            <li role="menuitem"><a class="dropdown-item">Action</a></li>
-            <li role="menuitem"><a class="dropdown-item">Another action</a></li>
-            <li role="menuitem"><a class="dropdown-item">Something else here</a></li>
-          </ul>
-        </div>
+<mat-tab-group  mat-align-tabs="center">
+  <mat-tab label="EMPLOYEE">
+    <div>
+      <div class="alert clearfix">
+        <button type="button" class="btn btn-primary btn-lg pull-right btn-gradient">
+          <i class="icon-plus icons font-2xl "></i>
+          Create Employee
+        </button>
       </div>
-      
-      <div class="card-body">
-        <table mdbTable mdbTableScroll  scrollY="true" scrollX="true"  maxHeight="50" maxWidth="50" class="table">
-          <thead>
-            <tr mdbTableCol >
-              <th  scope="row"class="border-top-0">Username</th>
-              <th  scope="row">Name</th>
-              <th  scope="row">Role</th>
-              <th  scope="row">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let data of datas; let i = index">
-              <td>{{data.first_name}}</td>
-              <td>{{i}}</td>
-            </tr>
-          </tbody>
-        </table>
-        <ul class="pagination">
-          <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-          <li class="page-item active">
-            <a class="page-link" href="#">1</a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">4</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
+      <div class="card">
+        <div class="card-header bg-white parent">
+          <div class="btn-group" dropdown #dropdown="bs-dropdown" [autoClose]="false">
+            <button dropdownToggle type="button" class="btn btn-primary btn-dropdown dropdown-toggle">
+              Button dropdown 
+              <span class="caret"></span>
+            </button>
+            <ul *dropdownMenu class="dropdown-menu" role="menu">
+              <li role="menuitem"><a class="dropdown-item">Action</a></li>
+              <li role="menuitem"><a class="dropdown-item">Another action</a></li>
+              <li role="menuitem"><a class="dropdown-item">Something else here</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="card-body">
+          <table mdbTable mdbTableScroll  scrollY="true" scrollX="true"  maxHeight="50" maxWidth="50" class="table">
+            <thead>
+              <tr mdbTableCol >
+                <th  scope="row"class="border-top-0">Username</th>
+                <th  scope="row">Name</th>
+                <th  scope="row">Role</th>
+                <th  scope="row">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of datas; let i = index">
+                <td>{{data.first_name}}</td>
+                <td>{{i}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
+  </mat-tab>
