@@ -7,14 +7,11 @@ import { ApiResult } from '../../../data-transfer/api-result';
 @Injectable({
   providedIn: 'root'
 })
-export class EmployeeService extends ApiService{
+export class TeamService extends ApiService{
   constructor(private http: HttpClient) { 
     super(http);
   }
-  getEmployees(): Observable<ApiResult> {
-    return super.apiGet<ApiResult>('employees', null, true);
-  }
-  createEmployee(tmc: any): Observable<ApiResult> {
-    return super.apiPost<ApiResult>('employees/add', tmc, null, true);
+  getTeams(): Observable<ApiResult> {
+    return super.apiGet<ApiResult>('teams', null, true);
   }
 }

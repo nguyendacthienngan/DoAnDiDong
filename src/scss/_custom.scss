@@ -4,14 +4,19 @@
     background: linear-gradient(117deg, rgba(1,38,144,1) 0%, rgba(3,63,159,1) 28%, rgba(34,104,174,1) 49%, rgba(43,119,179,1) 68%, rgba(90,186,198,1) 100%);
 }
 
-.app-body .main{
+.app-body {
     background-color: #F9FAFB;
+    color: #0E223D;
 }
 
 .btn-gradient {
 	background: rgb(1,38,144);
     background: linear-gradient(117deg, rgba(1,38,144,1) 0%, rgba(3,63,159,1) 28%, rgba(34,104,174,1) 49%, rgba(43,119,179,1) 68%, rgba(90,186,198,1) 100%);
     color: white;
+}
+
+.text-gradient {
+  color:  rgb(1,38,144);
 }
 .btn-dropdown {
     color: grey;

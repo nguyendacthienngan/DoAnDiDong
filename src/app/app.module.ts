@@ -42,6 +42,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { ReportComponent } from './views/report/report.component';
+import { ModalsComponent } from './views/modals/modals.component';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { ReportComponent } from './views/report/report.component';
     P500Component,
     LoginComponent,
     ReportComponent,
+    ModalsComponent,
   ],
   providers: [{
     provide: LocationStrategy,

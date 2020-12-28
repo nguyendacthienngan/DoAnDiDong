@@ -1,0 +1,69 @@
+<div style="margin: 10% ">
+
+  <div>
+    <div mat-dialog-content class="text-center">
+      <h3 mat-dialog-title>Create New Employee </h3>
+      <form [formGroup]="new_employee" (ngSubmit)="createEmployee()">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+              <div *ngIf="f.firstName.errors.required">First Name is required</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"/>
+          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+              <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+          </div>
+      </div>
+
+         <div class="form-group">
+            <label>Email</label>
+            <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label for="sel_job_titles">Select your job titles:</label>
+          <select class="form-control" id="sel_job_titles" formControlName="jobTitle" >
+            <option *ngFor="let jobTitle of jobTitles" [ngValue]="jobTitle.id">{{jobTitle.title_name}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="sel_salary_co">Select your salary coefficient:</label>
+          <select class="form-control" id="sel_salary_co" formControlName="salaryCo" >
+            <option *ngFor="let salary of salaryCoefficients" [ngValue]="salary.id">{{salary.value}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="text" formControlName="phoneNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
+          <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback" >
+              <div *ngIf="f.phoneNumber.errors.required">Phone Number is required</div>
+              <div *ngIf="f.phoneNumber.errors.mask">
+                Incorrect phone number format
+              </div>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 5px">
+          <button mat-button (click)="createEmployee()" cdkFocusInitial class="btn btn-primary btn-gradient">
+            CREATE
+          </button>
+          <button mat-button (click)="onNoClick()">CANCEL</button>
+      </div>
+      </form>
+    </div>
+      
+  </div>
+  
+  
+</div>

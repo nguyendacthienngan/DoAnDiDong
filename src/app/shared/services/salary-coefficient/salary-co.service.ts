@@ -7,14 +7,11 @@ import { ApiResult } from '../../../data-transfer/api-result';
 @Injectable({
   providedIn: 'root'
 })
-export class EmployeeService extends ApiService{
+export class SalaryCoService extends ApiService{
   constructor(private http: HttpClient) { 
     super(http);
   }
-  getEmployees(): Observable<ApiResult> {
-    return super.apiGet<ApiResult>('employees', null, true);
-  }
-  createEmployee(tmc: any): Observable<ApiResult> {
-    return super.apiPost<ApiResult>('employees/add', tmc, null, true);
+  getSalaryCoefficients(): Observable<ApiResult> {
+    return super.apiGet<ApiResult>('salaries', null, true);
   }
 }
