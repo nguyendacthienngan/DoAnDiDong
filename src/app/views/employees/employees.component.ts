@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewEncapsulation, Inject } from '@angular/core';
 import { EmployeeService } from '../../shared/services/employee/employee.service'
-import { JobTitleService } from '../../shared/services/job-title/job-title.service'
-import { TeamService } from '../../shared/services/team/team.service'
 import { Employee } from '../../view-model/employee.vm'
+
+import { JobTitleService } from '../../shared/services/job-title/job-title.service'
 import { JobTitle } from '../../view-model/job-tittle.vm'
+
+import { TeamService } from '../../shared/services/team/team.service'
 import { Team } from '../../view-model/team.vm'
 
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';

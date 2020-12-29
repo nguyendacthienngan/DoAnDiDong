@@ -17,4 +17,11 @@ export class EmployeeService extends ApiService{
   createEmployee(tmc: any): Observable<ApiResult> {
     return super.apiPost<ApiResult>('employees/add', tmc, null, true);
   }
+  getEmployee(id: number): Observable<ApiResult> {
+    return super.apiGet<ApiResult>('employees/' + id, null, true);
+  }
+  updateEmployee(tmc: any): Observable<ApiResult> {
+    return super.apiPut<ApiResult>('employees/update' + tmc.id, tmc, null, true);
+  }   
+
 }

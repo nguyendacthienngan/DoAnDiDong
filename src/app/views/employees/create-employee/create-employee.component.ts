@@ -93,7 +93,7 @@ export class CreateEmployeeComponent implements OnInit {
         alert("Create employee Successfully !");
         console.log(res);
       }
-      //this.dialogRef.close();
+      this.dialogRef.close();
       console.log(res);
     }, err => {
       alert("Error creating employee !");

@@ -1,3 +1,5 @@
+import { PhoneNumber } from './phone-number.vm'
+
 export class Employee{
     id:number;
     manager_id: number;
@@ -12,5 +14,5 @@ export class Employee{
     marital_status: number;
     address: string;
     email: string;
-    phone_contact_id: number;
+    phone_contact: PhoneNumber;
 }

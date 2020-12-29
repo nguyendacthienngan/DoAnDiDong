@@ -51,7 +51,11 @@
             </thead>
             <tbody>
               <tr *ngFor="let data of datas">
-                <td>{{data.first_name}}</td>
+                <td>
+                  <a  [routerLink]="['/employee/',data.id]">
+                    {{data.first_name}}
+                  </a>
+                </td>
                 <td>{{data.last_name}}</td>
                 <td  *ngIf="data.employ_type === 0">Part-Time</td>
                 <td *ngIf="data.employ_type === 1">Full-Time</td>
