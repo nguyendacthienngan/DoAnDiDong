@@ -1,1 +1,90 @@
-<p>create-candidate works!</p>
+<div style="margin: 10% ">
+
+    <div>
+      <div mat-dialog-content class="text-center">
+        <h3 mat-dialog-title>Create New Candidate </h3>
+        <form [formGroup]="new_candidate" >
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"/>
+            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label>Nationality ID</label>
+            <input type="text" formControlName="nationalityID" class="form-control" />
+          </div>
+
+           <div class="form-group">
+              <label>Email</label>
+              <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                  <div *ngIf="f.email.errors.required">Email is required</div>
+                  <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="text" formControlName="phoneNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
+            <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback" >
+                <div *ngIf="f.phoneNumber.errors.required">Phone Number is required</div>
+                <div *ngIf="f.phoneNumber.errors.mask">
+                  Incorrect phone number format
+                </div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="sel_gender">Select your gender:</label>
+            <select class="form-control" id="sel_gender" formControlName="gender" >
+              <option [ngValue]="1">Male</option>
+              <option [ngValue]="0">Female</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="sel_job_titles">Select your job titles:</label>
+            <select class="form-control" id="sel_job_titles" formControlName="jobTitle" >
+              <option *ngFor="let jobTitle of jobTitles" [ngValue]="jobTitle.id">{{jobTitle.title_name}}</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="sel_emp_type">Select your employee type:</label>
+            <select class="form-control" id="sel_emp_type" formControlName="empType" >
+              <option [ngValue]="1">Full-time</option>
+              <option [ngValue]="0">Part-time</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="sel_status">Select your candidate statuses:</label>
+            <select class="form-control" id="sel_status" formControlName="canStatuses" >
+              <option *ngFor="let canStatus of candidateStatuses" [ngValue]="canStatus.id">{{canStatus.status_name}}</option>
+            </select>
+          </div>
+  
+          <div class="form-group" style="margin-top: 5px">
+            <button mat-button (click)="createCandidate()" cdkFocusInitial class="btn btn-primary btn-gradient">
+              CREATE
+            </button>
+            <button mat-button (click)="onNoClick()">CANCEL</button>
+        </div>
+        </form>
+      </div>
+        
+    </div>
+    
+    
+  </div>

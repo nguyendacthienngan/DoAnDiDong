@@ -13,6 +13,9 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
+    data : {
+      title : 'Hello '
+    }
   },
   {
     path: '404',

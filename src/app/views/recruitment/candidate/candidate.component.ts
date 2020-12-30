@@ -1,16 +1,14 @@
 import { Component, OnInit, ViewEncapsulation, Inject } from '@angular/core';
-import { EmployeeService } from '../../../shared/services/employee/employee.service'
-import { Employee } from '../../../view-model/employee.vm'
+import { CandidateService } from '../../../shared/services/candidate/candidate.service'
+import { Candidate } from '../../../view-model/candidate.vm'
 
 import { JobTitleService } from '../../../shared/services/job-title/job-title.service'
 import { JobTitle } from '../../../view-model/job-tittle.vm'
 
-import { TeamService } from '../../../shared/services/team/team.service'
-import { Team } from '../../../view-model/team.vm'
-
 import { CreateCandidateComponent } from './create-candidate/create-candidate.component'
 
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
 @Component({
   selector: 'app-candidate',
   templateUrl: './candidate.component.html',
@@ -19,17 +17,15 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 })
 export class CandidateComponent implements OnInit {
 
-  datas:Employee[]=[];
+  datas:Candidate[]=[];
   jobTitles: JobTitle[] = [];
-  teams: Team[] = [];
   data: {};
   animal: string;
   name: string;
   constructor(
-    private employeeService : EmployeeService,
+    private candidateService : CandidateService,
     private jobTitleService : JobTitleService,
-    private teamService : TeamService,
-    public dialog : MatDialog
+    public dialog : MatDialog,
     ) { }
 
     openDialog() : void {
@@ -43,14 +39,14 @@ export class CandidateComponent implements OnInit {
         this.animal = result;
       });
     };
+
   ngOnInit(): void {
     this.getAll();
     this.getJobTitles();
-    this.getTeams();
   }
 
   getAll(){
-    this.employeeService.getEmployees().subscribe((res:any)=>{
+    this.candidateService.getCandidates().subscribe((res:any)=>{
       this.datas = res;
     })
   }
@@ -61,9 +57,5 @@ export class CandidateComponent implements OnInit {
     })
   }
 
-  getTeams() {
-    this.teamService.getTeams().subscribe((res:any)=>{
-      this.teams = res;
-    })
-  }
+  
 }

@@ -1,0 +1,155 @@
+<mat-tab-group  mat-align-tabs="center">
+    <mat-tab label="Candidate">
+        
+        <div class="container bootstrap snippet">
+            <div class="row" style="margin: 3%;">
+                <div class="col-3"><!--left col-->
+                  <div class="card text-center">
+                    <img src="./../../../../../assets/img/profile.png" class=" mx-auto img-circle img-profile" alt="avatar">
+                      
+                    <div class="card-body" *ngIf="candidate != null">
+                      <h4 class="card-title">{{candidate.first_name + " " + candidate.last_name}}</h4>
+                      <p class="card-text">{{candidate.candidate_state}}</p>
+                      <p class="card-text">{{candidate.email}}</p>
+                      <p class="card-text">{{candidate.phone_no}}</p>
+                    </div>
+                  </div>
+                  
+                </div><!--/col-3-->
+                <div class="col-9">
+                  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+                    <li [ngbNavItem]="general">
+                      <a ngbNavLink>GENERAL</a>
+                        <ng-template ngbNavContent>
+                          <div class="row">
+                            <div class="col-12">
+                              <div class="panel-left">
+                                <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+                                <span class="aligned-with-icon">Personal Info</span>
+                                <button type="button" class="btn btn-primary pull-right btn-gradient">Edit</button>
+                                <!-- <button type="button" class="btn btn-primary pull-right btn-gradient" [routerLink]="['/candidate/edit',candidate.id]">Edit</button> -->
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="row panel-margin ">
+                            <div class="col-6">
+                              <div class="row"> 
+                                <div class="col-5 text-label">
+                                  First Name
+                                </div>
+                                <div class="col-7 text-content">
+                                  {{candidate.first_name}}
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="row"> 
+                                <div class="col-5 text-label">
+                                  Last Name
+                                </div>
+                                <div class="col-7 text-content">
+                                  {{candidate.last_name}}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row panel-margin">
+                            <div class="col-6">
+                              <div class="row"> 
+                                <div class="col-5 text-label">
+                                  National ID
+                                </div>
+                                <div class="col-7 text-content">
+                                  {{candidate.national_id}}
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="row"> 
+                                <div class="col-5 text-label">
+                                  Email
+                                </div>
+                                <div class="col-7 text-content">
+                                  {{candidate.email}}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row panel-margin">
+                            <div class="col-6">
+                              <div class="row"> 
+                                <div class="col-5 text-label">
+                                  Phone Number
+                                </div>
+                                <div class="col-7 text-content">
+                                  {{candidate.phone_no}}
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="row"> 
+                                <div class="col-5 text-label">
+                                  Gender
+                                </div>
+                                <div class="col-7 text-content">
+                                  <div *ngIf="candidate.gender === 1; else elseBlock">
+                                    Male
+                                  </div>
+                                  <ng-template #elseBlock>Female</ng-template>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="job">
+                      <a ngbNavLink>JOB</a>
+                        <ng-template ngbNavContent>
+                          <div class="row">
+                            <div class="col-12">
+                              <div class="panel-left">
+                                <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+                                <span class="aligned-with-icon">Job Info</span>
+                              <button type="button" class="btn btn-primary pull-right btn-gradient" [routerLink]="['/candidate/edit',candidate.id]">Edit</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row panel-margin">
+                            <div class="col-6">
+                              <div class="row"> 
+                                <div class="col-5 text-label">
+                                  Job Title
+                                </div>
+                                <div class="col-7 text-content">
+                                  {{candidate.position}}
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="row"> 
+                                <div class="col-5 text-label">
+                                  Employee Type
+                                </div>
+                                <div class="col-7 text-content">
+                                  <div *ngIf="candidate.gender === 1; else elseBlock">
+                                    {{candidate.employ_type}}
+                                  </div>
+                                  <ng-template #elseBlock>Female</ng-template>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </ng-template>
+                    </li>
+                  </ul>
+                  
+                  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+                  
+                </div><!--/col-9-->
+            </div><!--/row-->
+            </div>
+    </mat-tab>
+  </mat-tab-group>
