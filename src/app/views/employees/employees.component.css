@@ -1,0 +1,17 @@
+th:first-child, td:first-child
+{
+  position:sticky;
+  left:0px;
+}
+
+table {
+  font-size: large;
+} 
+
+th{
+  border-top: 0px !important;
+}
+span.caret {
+  color: rgb(1,38,144);
+}
+

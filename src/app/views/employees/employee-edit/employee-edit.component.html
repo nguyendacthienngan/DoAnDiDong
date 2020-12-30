@@ -1,0 +1,218 @@
+<mat-tab-group  mat-align-tabs="center">
+    <mat-tab label="EMPLOYEE">
+        
+        <div class="container bootstrap snippet">
+            <div class="row" style="margin: 3%;">
+                <div class="col-3"><!--left col-->
+                  <div class="card text-center">
+                    <img src="../../../../assets/img/profile.png" class=" mx-auto img-circle img-profile" alt="avatar">
+                    <div class="card-body" *ngIf="employee != null">
+                        <h4 class="card-title">{{employee.first_name + " " + employee.last_name}}</h4>
+                        <p class="card-text">{{employee.job_title.title_name}}</p>
+                        <p class="card-text">{{employee.email}}</p>
+                        <p class="card-text">{{employee.phone_contact.personal_call}}</p>
+                    </div>
+                  </div>
+                  
+                </div><!--/col-3-->
+                <div class="col-9">
+                  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+                    <li [ngbNavItem]="general">
+                      <a ngbNavLink>GENERAL</a>
+                        <ng-template ngbNavContent>
+                            <form [formGroup]="update_employee"  (ngSubmit)="updateEmployee1()" class="form panel-margin " action="##" method="post" id="registrationForm">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="first_name"><h6>First name</h6></label>
+                                            <input type="text" formControlName="firstName" class="form-control" name="first_name" id="first_name"title="Enter your first name if any.">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="last_name"><h6>Last Name</h6></label>
+                                            <input type="text" formControlName="lastName" class="form-control" name="last_name" id="last_name" title="Enter your first name if any.">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="sel_gender"><h6>Gender</h6></label>
+                                            <select class="form-control" formControlName="gender" id="sel_gender" >
+                                                <option [ngValue]="0">Female</option>
+                                                <option [ngValue]="1">Male</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="location"><h6>Address</h6></label>
+                                            <input type="text" formControlName="address" class="form-control" id="location"  title="enter a location">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="nationality_ID"><h6>Nationality ID</h6></label>
+                                            <input type="text" formControlName="nationalityID" class="form-control" name="nationality_ID" id="nationality_ID" title="Enter your last name if any.">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="birth_date"><h6>Birth Date</h6></label>
+                                            <div class="input-group">
+                                                <input class="form-control" formControlName="birthDate" name="dp" ngbDatepicker #d="ngbDatepicker" >
+                                                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="phone_contact"><h6>Phone number</h6></label>
+                                            <input type="number" formControlName="phoneNumber" class="form-control" name="phone_contact" id="birthdate"  title="choose your birthdate.">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="emergency_call"><h6>Emergency Call</h6></label>
+                                            <input type="number" formControlName="emergencyCall" class="form-control" name="emergency_call" id="emergency_call" title="enter your email.">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="email"><h6>Email</h6></label>
+                                            <input type="email" formControlName="email" class="form-control" name="email" id="email" title="enter your email.">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="sel_marital"><h6>Martial Status</h6></label>
+                                            <select class="form-control" formControlName="maritalStatus" id="sel_marital" >
+                                                <option [ngValue]="0">Single</option>
+                                                <option [ngValue]="1">Married</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="username"><h6>Username</h6></label>
+                                            <input type="text" formControlName="username" class="form-control" name="username" id="username" title="enter your email.">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        
+                                        <div class="form-group">
+                                            <label for="password"><h6>Password</h6></label>
+                                            <input type="password" formControlName="password" class="form-control" name="password" id="password"  title="enter your password.">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        <br>
+                                            <button class="btn btn-lg btn-gradient" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                            <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </ng-template>
+                    </li>
+                    <li [ngbNavItem]="job">
+                      <a ngbNavLink>JOB</a>
+                        <ng-template ngbNavContent>
+                            <form [formGroup]="update_employees_2" class="form panel-margin " action="##" method="post" id="registrationForm">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="sel_employee_type"><h6>Employee Status</h6></label>
+                                            <select class="form-control" id="sel_employee_type">
+                                                <option [ngValue]="1">Full-time</option>
+                                                <option [ngValue]="0">Part-time</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="sel_job_titles"><h6>Job Tittle</h6></label>
+                                            <select class="form-control" id="sel_job_titles">
+                                                <option *ngFor="let jobTitle of jobTitles" [ngValue]="jobTitle.id">{{jobTitle.title_name}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="sel_team"><h6>Department</h6></label>
+                                            <select class="form-control" id="sel_team" >
+                                                <option *ngFor="let team of teams" [ngValue]="team.id">
+                                                    <div *ngIf="team.team_type === 0">
+                                                        {{team.team_name}}
+                                                    </div>
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="employee_type"><h6>Employment Type</h6></label>
+                                            <select class="form-control" id="sel_employee_type">
+                                                <option [ngValue]="1">Full-time</option>
+                                                <option [ngValue]="0">Part-time</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="sel_salary_co"><h6>Salary Coefficient</h6></label>
+                                            <select class="form-control" id="sel_salary_co" >
+                                                <option *ngFor="let salary of salaryCoefficients" [ngValue]="salary.id">{{salary.value}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="manager"><h6>Manager Name</h6></label>
+                                            <input type="text" class="form-control" name="manager" id="manager" title="enter your manager name.">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        <br>
+                                            <button class="btn btn-lg btn-gradient" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                            <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                                    </div>
+                                    
+                                </div>
+                            </form>
+                        </ng-template>
+                    </li>
+                  </ul>
+                  
+                  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+                  
+                </div><!--/col-9-->
+            </div><!--/row-->
+            </div>
+    </mat-tab>
+  </mat-tab-group>

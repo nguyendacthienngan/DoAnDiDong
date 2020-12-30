@@ -1,5 +1,5 @@
 <app-header
-  [navbarBrandRouterLink]="['/dashboard']"
+  [navbarBrandRouterLink]="['/home']"
   [fixed]="true"
   [navbarBrandFull]="{src: 'assets/img/brand/logo.png', width: 110, height: 50, alt: 'CoreUI Logo'}"
   [navbarBrandMinimized]="{src: 'assets/img/brand/sygnet.svg', width: 30, height: 30, alt: 'CoreUI Logo'}"
@@ -9,19 +9,22 @@
   [mobileSidebarToggler]="false">
   <ul class="nav navbar-nav d-md-down-none">
     <li class="nav-item px-3">
-      <a class="nav-link text-white" href="#">Dashboard</a>
+      <a class="nav-link text-white" href="">Home</a>
+    </li>
+    <li class="nav-item px-3">
+      <a class="nav-link text-white" href="#/calendar">Calendar</a>
     </li>
     <li class="nav-item px-3">
       <a class="nav-link text-white" href="#/employee">Employees</a>
     </li>
     <li class="nav-item px-3">
-      <a class="nav-link text-white" href="#">Time Off</a>
+      <a class="nav-link text-white" href="#/timeoff">Time Off</a>
     </li>
     <li class="nav-item px-3">
-      <a class="nav-link text-white" href="#">Recruitment</a>
+      <a class="nav-link text-white" href="#/payroll">Pay Roll</a>
     </li>
     <li class="nav-item px-3">
-      <a class="nav-link text-white" href="#">Reports</a>
+      <a class="nav-link text-white" href="#/recruitment">Recruitment</a>
     </li>
   </ul>
   <ul class="nav navbar-nav ml-auto">
@@ -56,21 +59,9 @@
     </li>
   </ul>
 </app-header>
-<div class="app-body  bg-light">
+<div class="app-body">
   <!-- Main content -->
   <main class="main">
-    <!-- Breadcrumb -->
-    <!-- breaking change 'cui-breadcrumb' -->
-    <cui-breadcrumb>
-      <!-- Breadcrumb Menu-->
-      <li class="breadcrumb-menu d-md-down-none">
-        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-          <a class="btn" href="#"><i class="icon-speech"></i></a>
-          <a class="btn" [routerLink]="['/dashboard']"><i class="icon-graph"></i> &nbsp;Dashboard</a>
-          <a class="btn" href="#"><i class="icon-settings"></i> &nbsp;Settings</a>
-        </div>
-      </li>
-    </cui-breadcrumb>
     <div class="container-fluid">
       <router-outlet></router-outlet>
     </div><!-- /.container-fluid -->

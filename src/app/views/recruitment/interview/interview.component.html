@@ -1,0 +1,78 @@
+<div>
+    <div class="alert clearfix">
+      <button type="button" class="btn btn-primary btn-lg pull-right btn-gradient" (click)="openDialog()">
+        <i class="icon-plus icons font-2xl "></i>
+        Create Employee
+      </button>
+    </div>
+    <div class="card">
+      <div class="card-header bg-white parent">
+        <div class="btn-group" dropdown #dropdown="bs-dropdown" [autoClose]="false">
+          <button dropdownToggle type="button" class="btn btn-primary btn-dropdown dropdown-toggle">
+            Job Titles
+            <span class="caret"></span>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" role="menu"> 
+            <li role="menuitem" *ngFor="let jT of jobTitles">
+              <a class="dropdown-item">
+              {{jT.title_name}}
+            </a>
+            </li>
+          </ul>
+        </div>
+        <div class="btn-group" dropdown #dropdown="bs-dropdown" [autoClose]="false">
+          <button dropdownToggle type="button" class="btn btn-primary btn-dropdown dropdown-toggle">
+            Teams
+            <span class="caret"></span>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" role="menu"> 
+            <li role="menuitem" *ngFor="let team of teams">
+              <a class="dropdown-item" *ngIf = "team.team_type === 0"> 
+              {{team.team_name}}
+            </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="card-body">
+        <table mdbTable mdbTableScroll  scrollY="true" scrollX="true"  maxHeight="50" maxWidth="50" class="table">
+          <thead>
+            <tr mdbTableCol >
+              <th  scope="row">First Name</th>
+              <th  scope="row">Last Name</th>
+              <th  scope="row">Type</th>
+              <th  scope="row">Job Title</th>
+              <th  scope="row">Team</th>
+              <th  scope="row">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of datas">
+              <td>
+                <!-- <a  [routerLink]="['/employee/',data.id]">
+                  {{data.first_name}}
+                </a> -->
+                  {{data.first_name}}
+              </td>
+              <td>{{data.last_name}}</td>
+              <td  *ngIf="data.employ_type === 0">Part-Time</td>
+              <td *ngIf="data.employ_type === 1">Full-Time</td>
+              <td>{{data.job_title.title_name}}</td>
+              <td >
+                <ng-container *ngFor="let team of data.involved_teams" >
+                  <span *ngIf="team.team_type === 0; else elseBlock">
+                      {{team.team_name}}
+                  </span> 
+                  <ng-template #elseBlock>
+
+                  </ng-template>
+               </ng-container>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

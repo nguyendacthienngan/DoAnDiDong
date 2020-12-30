@@ -7,12 +7,11 @@ import { DefaultLayoutComponent } from './containers';
 import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
-import { RegisterComponent } from './views/register/register.component';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {
@@ -37,26 +36,35 @@ export const routes: Routes = [
     }
   },
   {
-    path: 'register',
-    component: RegisterComponent,
-    data: {
-      title: 'Register Page'
-    }
-  },
-  {
     path: '',
     component: DefaultLayoutComponent,
     data: {
-      title: 'Home'
+      title: 'home'
     },
     children: [
       {
-        path: 'dashboard',
+        path: 'home',
         loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
       },
       {
         path: 'employee',
         loadChildren: () => import('./views/employees/employees.module').then(m => m.EmployeesModule)
+      },
+      {
+        path: 'recruitment',
+        loadChildren: () => import('./views/recruitment/recruitment.module').then(m => m.RecruitmentModule)
+      },
+      {
+        path: 'timeoff',
+        loadChildren: () => import('./views/timeoff/timeoff.module').then(m => m.TimeoffModule)
+      },
+      {
+        path: 'payroll',
+        loadChildren: () => import('./views/payroll/payroll.module').then(m => m.PayrollModule)
+      },
+      {
+        path: 'calendar',
+        loadChildren: () => import('./views/calendar/calendar.module').then(m => m.CalendarModule)
       },
     ]
   },
