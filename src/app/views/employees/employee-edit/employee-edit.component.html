@@ -131,7 +131,7 @@
                     <li [ngbNavItem]="job">
                       <a ngbNavLink>JOB</a>
                         <ng-template ngbNavContent>
-                            <form [formGroup]="update_employees_2" class="form panel-margin " action="##" method="post" id="registrationForm">
+                            <form [formGroup]="update_employees_2" (ngSubmit)="updateEmployee2()" class="form panel-margin " action="##" method="post" id="registrationForm">
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="form-group">

@@ -12,5 +12,5 @@ export class Candidate{
     gender: number;
     address: string;
     email: string;
-    phone_contact: string;
+    phone_no: string;
 }
