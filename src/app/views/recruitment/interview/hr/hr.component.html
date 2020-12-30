@@ -1,0 +1,52 @@
+<div class="w-100">
+  <div class="alert clearfix">
+  </div>
+  <div class="card">
+    <div class="card-header bg-white parent">
+    </div>
+    
+    <div class="card-body">
+      <table mdbTable mdbTableScroll  scrollY="true" scrollX="true"  maxHeight="50" maxWidth="50" class="table">
+        <thead>
+          <tr mdbTableCol >
+            <th  scope="row">Department</th>
+            <th  scope="row">Candidate</th>
+            <th  scope="row">Date</th>
+            <th  scope="row">Candidate Status</th>
+            <th  scope="row"></th>
+            <th  scope="row"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of datas">
+            <td>
+              {{data.team_id}}
+            </td>
+            <td>
+              {{data}}
+            </td>
+            <td>
+              {{data}}
+            </td>
+            <td>
+              {{data.date | date:'fullDate' }}
+            </td>
+            <td>
+              {{data}}
+            </td>
+            <td>
+              <button class="btn" (click)="onEdit(data.id)">
+                <i class="cui-pencil font-2xl "></i>
+              </button>
+            </td>
+            <td>
+              <button class="btn" (click)="onDelete(data.id)">
+                <i class="cui-trash font-2xl "></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

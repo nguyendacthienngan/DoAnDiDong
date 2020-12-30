@@ -2,7 +2,7 @@
     <div class="alert clearfix">
       <button type="button" class="btn btn-primary btn-lg pull-right btn-gradient" (click)="openDialog()">
         <i class="icon-plus icons font-2xl "></i>
-        Create Employee
+        Create Request
       </button>
     </div>
     <div class="card">
@@ -39,12 +39,13 @@
         <table mdbTable mdbTableScroll  scrollY="true" scrollX="true"  maxHeight="50" maxWidth="50" class="table">
           <thead>
             <tr mdbTableCol >
-              <th  scope="row">First Name</th>
-              <th  scope="row">Last Name</th>
+              <th  scope="row">From</th>
+              <th  scope="row">To</th>
+              <th  scope="row">Total</th>
               <th  scope="row">Type</th>
-              <th  scope="row">Job Title</th>
-              <th  scope="row">Team</th>
               <th  scope="row">Status</th>
+              <th  scope="row"></th>
+              <th  scope="row"></th>
             </tr>
           </thead>
           <tbody>
@@ -53,22 +54,13 @@
                 <!-- <a  [routerLink]="['/employee/',data.id]">
                   {{data.first_name}}
                 </a> -->
-                  {{data.first_name}}
+                  {{data.start_date | date:'dd/MM/yyyy'}}
               </td>
-              <td>{{data.last_name}}</td>
-              <td  *ngIf="data.employ_type === 0">Part-Time</td>
-              <td *ngIf="data.employ_type === 1">Full-Time</td>
-              <td>{{data.job_title.title_name}}</td>
-              <td >
-                <ng-container *ngFor="let team of data.involved_teams" >
-                  <span *ngIf="team.team_type === 0; else elseBlock">
-                      {{team.team_name}}
-                  </span> 
-                  <ng-template #elseBlock>
-
-                  </ng-template>
-               </ng-container>
-              </td>
+              <td>{{data.end_date | date:'dd/MM/yyyy'}}</td>
+              <td>{{data.day_off}}</td>
+              <td>{{data.leave_type.name}}</td>
+              <td *ngIf="data.event_status === 0">Unofficial</td>
+              <td *ngIf="data.event_status === 1">Official</td>
 
             </tr>
           </tbody>

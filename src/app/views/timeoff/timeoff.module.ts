@@ -16,6 +16,9 @@ import { TeamTimeoffModule } from './team-timeoff/team-timeoff.module'
 
 import { EmployeeTimeoffComponent } from './employee-timeoff/employee-timeoff.component';
 import { EmployeeTimeoffModule } from './employee-timeoff/employee-timeoff.module'
+
+import { MatNativeDateModule } from '@angular/material/core';
+
 @NgModule({
   declarations: [TimeoffComponent],
   imports: [
@@ -28,7 +31,8 @@ import { EmployeeTimeoffModule } from './employee-timeoff/employee-timeoff.modul
 
     MyTimeoffModule,
     TeamTimeoffModule,
-    EmployeeTimeoffModule
+    EmployeeTimeoffModule,
+    MatNativeDateModule
   ],
   exports: [
     TeamTimeoffComponent,

@@ -1,0 +1,45 @@
+<div style="margin: 10% ">
+
+    <div>
+      <div mat-dialog-content class="text-center">
+        <h3 mat-dialog-title>Update Team Schedule </h3>
+        <form [formGroup]="update_schedule" >
+          
+
+          <div class="form-group">
+            <label for="sel_team">Select your team:</label>
+            <select class="form-control" id="sel_team" formControlName="team" >
+              <option *ngFor="let team of teams" [ngValue]="team.id">{{team.team_name}}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="sel_job_titles">Select your position:</label>
+            <select class="form-control" id="sel_job_titles" formControlName="jobTitle" >
+              <option *ngFor="let jobTitle of jobTitles" [ngValue]="jobTitle.id">{{jobTitle.title_name}}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="sel_team">Select schedule date:</label>
+            <mat-form-field appearance="outline">
+              <mat-label>Choose a date</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="scheduleDate">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          
+          <div class="form-group" style="margin-top: 5px">
+            <button mat-button (click)="updateSchedule()" cdkFocusInitial class="btn btn-primary btn-gradient">
+              UPDATE
+            </button>
+            <button mat-button (click)="onNoClick()">CANCEL</button>
+        </div>
+        </form>
+      </div>
+        
+    </div>
+    
+    
+  </div>
