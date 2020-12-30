@@ -20,4 +20,10 @@ export class PhoneNumberService extends ApiService{
   createPhoneNum(tmc: any): Observable<PhoneNumber> {
     return super.apiPost<PhoneNumber>('contacts/add', tmc, null, true);
   }
+  getPhoneNumber(id: number): Observable<ApiResult> {
+    return super.apiGet<ApiResult>('contacts/' + id, null, true);
+  }
+  updatePhoneNumber(tmc: any): Observable<ApiResult> {
+    return super.apiPut<ApiResult>('contacts/update/', tmc, null, true);
+  }   
 }

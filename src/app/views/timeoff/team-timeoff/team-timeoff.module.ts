@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PayRollRoutingModule } from './payroll-routing.module'
-import { PayrollComponent } from './payroll.component'
-import {MatTabsModule} from '@angular/material/tabs';
+import { TeamTimeoffComponent } from './team-timeoff.component'
+
 import { MatIconModule } from '@angular/material/icon';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [PayrollComponent],
+  declarations: [TeamTimeoffComponent],
   imports: [
     CommonModule,
-    PayRollRoutingModule,
-    MatTabsModule,
     MatIconModule,
     BsDropdownModule,
     MatDialogModule
+  ],
+  exports: [
+    TeamTimeoffComponent
   ]
 })
-export class PayrollModule { }
+export class TeamTimeoffModule { }

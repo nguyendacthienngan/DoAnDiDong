@@ -6,7 +6,6 @@ import { EmployeesRoutingModule } from '../employees-routing.module';
 import { MatCardModule } from '@angular/material/card';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 @NgModule({
   declarations: [],
   imports: [
@@ -16,7 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     RouterModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class EmployeeEditModule { }

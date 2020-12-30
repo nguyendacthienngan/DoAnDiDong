@@ -6,13 +6,12 @@
                 <div class="col-3"><!--left col-->
                   <div class="card text-center">
                     <img src="../../../../assets/img/profile.png" class=" mx-auto img-circle img-profile" alt="avatar">
-                      
-                    <div class="card-body">
+                    <div class="card-body" *ngIf="employee != null">
                         <h4 class="card-title">{{employee.first_name + " " + employee.last_name}}</h4>
                         <p class="card-text">{{employee.job_title.title_name}}</p>
                         <p class="card-text">{{employee.email}}</p>
                         <p class="card-text">{{employee.phone_contact.personal_call}}</p>
-                      </div>
+                    </div>
                   </div>
                   
                 </div><!--/col-3-->
@@ -21,18 +20,18 @@
                     <li [ngbNavItem]="general">
                       <a ngbNavLink>GENERAL</a>
                         <ng-template ngbNavContent>
-                            <form [formGroup]="update_employee" class="form panel-margin " action="##" method="post" id="registrationForm">
+                            <form [formGroup]="update_employee"  (ngSubmit)="updateEmployee1()" class="form panel-margin " action="##" method="post" id="registrationForm">
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="first_name"><h6>First name</h6></label>
-                                            <input type="text" formControlName="firstName" class="form-control" name="first_name" id="first_name" placeholder="{{employee.first_name}}" title="Enter your first name if any.">
+                                            <input type="text" formControlName="firstName" class="form-control" name="first_name" id="first_name"title="Enter your first name if any.">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="last_name"><h6>Last Name</h6></label>
-                                            <input type="text" formControlName="lastName" class="form-control" name="last_name" id="last_name" placeholder="{{employee.last_name}}" title="Enter your first name if any.">
+                                            <input type="text" formControlName="lastName" class="form-control" name="last_name" id="last_name" title="Enter your first name if any.">
                                         </div>
                                     </div>
                                 </div>
@@ -48,8 +47,8 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <label for="email"><h6>Address</h6></label>
-                                            <input type="email" formControlName="address" class="form-control" id="location" placeholder="{{employee.address}}" title="enter a location">
+                                            <label for="location"><h6>Address</h6></label>
+                                            <input type="text" formControlName="address" class="form-control" id="location"  title="enter a location">
                                         </div>
                                     </div>
                                     
@@ -57,14 +56,18 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <label for="last_name"><h6>Nationality ID</h6></label>
-                                            <input type="text" formControlName="nationalityID" class="form-control" name="last_name" id="last_name" placeholder="{{employee.national_id}}" title="Enter your last name if any.">
+                                            <label for="nationality_ID"><h6>Nationality ID</h6></label>
+                                            <input type="text" formControlName="nationalityID" class="form-control" name="nationality_ID" id="nationality_ID" title="Enter your last name if any.">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="birth_date"><h6>Birth Date</h6></label>
-                                            <input type="datetime-local" formControlName="birthDate" class="form-control" name="birth_date" id="birthdate" placeholder="11/11/2000" title="choose your birthdate.">
+                                            <div class="input-group">
+                                                <input class="form-control" formControlName="birthDate" name="dp" ngbDatepicker #d="ngbDatepicker" >
+                                                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                                            </div>
+                                            
                                         </div>
                                     </div>
                                     
@@ -73,13 +76,13 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="phone_contact"><h6>Phone number</h6></label>
-                                            <input type="number" formControlName="phoneNumber" class="form-control" name="phone_contact" id="birthdate" placeholder="{{employee.phone_contact.personal_call}}" title="choose your birthdate.">
+                                            <input type="number" formControlName="phoneNumber" class="form-control" name="phone_contact" id="birthdate"  title="choose your birthdate.">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="emergency_call"><h6>Emergency Call</h6></label>
-                                            <input type="number" formControlName="emergencyCall" class="form-control" name="emergency_call" id="emergency_call" placeholder="{{employee.phone_contact.emergency_call}}" title="enter your email.">
+                                            <input type="number" formControlName="emergencyCall" class="form-control" name="emergency_call" id="emergency_call" title="enter your email.">
                                         </div>
                                     </div>
                                 </div>
@@ -87,28 +90,31 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="email"><h6>Email</h6></label>
-                                            <input type="email" formControlName="email" class="form-control" name="email" id="email" placeholder="{{employee.email}}" title="enter your email.">
+                                            <input type="email" formControlName="email" class="form-control" name="email" id="email" title="enter your email.">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <label for="email"><h6>Martial Status</h6></label>
-                                            <input type="email" formControlName="email" class="form-control" name="email" id="email" placeholder="{{employee.email}}" title="enter your email.">
+                                            <label for="sel_marital"><h6>Martial Status</h6></label>
+                                            <select class="form-control" formControlName="maritalStatus" id="sel_marital" >
+                                                <option [ngValue]="0">Single</option>
+                                                <option [ngValue]="1">Married</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <label for="email"><h6>Username</h6></label>
-                                            <input type="text" formControlName="username" class="form-control" name="email" id="email" placeholder="username" title="enter your email.">
+                                            <label for="username"><h6>Username</h6></label>
+                                            <input type="text" formControlName="username" class="form-control" name="username" id="username" title="enter your email.">
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         
                                         <div class="form-group">
                                             <label for="password"><h6>Password</h6></label>
-                                            <input type="password" formControlName="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
+                                            <input type="password" formControlName="password" class="form-control" name="password" id="password"  title="enter your password.">
                                         </div>
                                     </div>
                                 </div>
@@ -131,8 +137,8 @@
                                         <div class="form-group">
                                             <label for="sel_employee_type"><h6>Employee Status</h6></label>
                                             <select class="form-control" id="sel_employee_type">
-                                                <option>Full-time</option>
-                                                <option>Part-time</option>
+                                                <option [ngValue]="1">Full-time</option>
+                                                <option [ngValue]="0">Part-time</option>
                                             </select>
                                         </div>
                                     </div>
@@ -165,7 +171,10 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="employee_type"><h6>Employment Type</h6></label>
-                                            <input type="text" class="form-control" name="employee_type" id="employee_type" placeholder="{{employee.employ_type}}" title="Enter your first name if any.">
+                                            <select class="form-control" id="sel_employee_type">
+                                                <option [ngValue]="1">Full-time</option>
+                                                <option [ngValue]="0">Part-time</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -182,8 +191,8 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <div class="form-group">
-                                            <label for="email"><h6>Manager Name</h6></label>
-                                            <input type="email" formControlName="email" class="form-control" name="email" id="email" placeholder="{{employee.email}}" title="enter your email.">
+                                            <label for="manager"><h6>Manager Name</h6></label>
+                                            <input type="text" class="form-control" name="manager" id="manager" title="enter your manager name.">
                                         </div>
                                     </div>
                                 </div>
