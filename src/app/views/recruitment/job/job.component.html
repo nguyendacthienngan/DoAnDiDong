@@ -2,7 +2,7 @@
     <div class="alert clearfix">
       <button type="button" class="btn btn-primary btn-lg pull-right btn-gradient" (click)="openDialog()">
         <i class="icon-plus icons font-2xl "></i>
-        Create Employee
+        Create Job
       </button>
     </div>
     <div class="card">
@@ -43,8 +43,8 @@
               <th  scope="row">Last Name</th>
               <th  scope="row">Type</th>
               <th  scope="row">Job Title</th>
-              <th  scope="row">Team</th>
-              <th  scope="row">Status</th>
+              <!-- <th  scope="row">Team</th>
+              <th  scope="row">Status</th> -->
             </tr>
           </thead>
           <tbody>
@@ -59,7 +59,7 @@
               <td  *ngIf="data.employ_type === 0">Part-Time</td>
               <td *ngIf="data.employ_type === 1">Full-Time</td>
               <td>{{data.job_title.title_name}}</td>
-              <td >
+              <!-- <td >
                 <ng-container *ngFor="let team of data.involved_teams" >
                   <span *ngIf="team.team_type === 0; else elseBlock">
                       {{team.team_name}}
@@ -68,7 +68,7 @@
 
                   </ng-template>
                </ng-container>
-              </td>
+              </td> -->
 
             </tr>
           </tbody>
